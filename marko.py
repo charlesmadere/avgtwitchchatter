@@ -1,7 +1,22 @@
 import markovify
+import sys
+
+# Get the channel name passed as a command-line argument
+bot_name = sys.argv[1] if len(sys.argv) > 1 else None
+
+if not bot_name:
+    print("No channel name provided.")
 
 
-def contains_banned_term(text, filename="bannedterms.txt"):
+chat_log_file = "./" + bot_name + "/chat_log.txt"
+###
+# check if contains banned term
+###
+
+def contains_banned_term(text, filename="banned_terms.txt"):
+
+    filename=bot_name + "/banned_terms.txt"
+
     if text is None:
         return False
     try:
@@ -18,7 +33,7 @@ def contains_banned_term(text, filename="bannedterms.txt"):
         return False
 
 # Get raw text as string.
-with open("./chat_log.txt", "r", encoding='utf-8') as f:
+with open(chat_log_file, "r", encoding='utf-8') as f:
 	text = f.read()
 
 #Build the model

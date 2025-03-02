@@ -209,8 +209,9 @@ client.on('message', (channel, tags, message, self) => {
         if (messageCount >= 25) {
             messageCount = 0; // Reset the counter
 
+            const command = "python marko.py " + botName
             // Run the Python script
-            exec('python marko.py', (error, stdout, stderr) => {
+            exec(command, (error, stdout, stderr) => {
                 if (error) {
                     console.error(`Error executing Python script: ${error.message}`);
                     return;

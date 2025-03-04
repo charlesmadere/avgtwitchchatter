@@ -237,7 +237,7 @@ client.connect()
     .catch(console.error);
 
 
-//None of this seems to work
+/*None of this seems to work
 //
 //
 //
@@ -266,3 +266,4 @@ client.on('part', (channel, username, self) => {
     }, 5000); // Wait 5 seconds before trying to rejoin
 });
 
+*/

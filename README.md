@@ -30,16 +30,24 @@ If you prefer to run the bot on your own system, follow these steps:
    ```sh
    npm install tmi.js markov
    ```
-5. **Configure your bot:**
-   - Create a `.env` file and add your Twitch bot credentials.
+5. **Run the bot:**
+   ```./startbot.sh <name of bot> <name of channel>
+   ```
    - Example:
-     ```env
-     TWITCH_USERNAME=yourbotusername
-     TWITCH_OAUTH=your_oauth_token
-     ```
-6. **Run the bot:**
-   ```sh
-   node bot.js
+   ```./startbot.sh avgjqchatter jaquarium
+   ```
+   - Alternatively, you can just launch the .js:
+   ```node twitch-chat-logger.js <name of bot> <name of channel>
+   ```
+   I created the bash wrapper to load env variables for python/js to make things easier for myself, but this is going to be env specific.
+
+   The bot should make a few directories, files, and fail.
+   
+7. **Configure your bot:**
+   - Grab the access token from [Twitch Token Generator](https://twitchtokengenerator.com/). (choose "bot" on the popup, then login)
+   - put "oauth:" in front of the access token and save it to the token.txt file generated in your bot's folder
+   - Example:
+   ```oauth:123123123123123123sdfsdffasdfsdf
    ```
 
 ## Commands

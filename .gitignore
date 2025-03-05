@@ -6,6 +6,7 @@ lib/
 lib64/
 include/
 node_modules/
+bin/
 
 #env
 pyvenv.cfg

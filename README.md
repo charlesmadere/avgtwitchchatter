@@ -8,7 +8,7 @@ If you would like me to run the bot for you, simply follow these steps:
 1. **Create a Twitch account** for your bot.
 2. **Maintain an active subscription** to [Jaquarium](https://twitch.tv/jaquarium).
 3. **Generate an access token** using [Twitch Token Generator](https://twitchtokengenerator.com/).
-4. **Send me the access token**, and I will keep the bot running as long as your subscription to Jaquarium is maintained.
+4. **Send me the access token**, via [jq's discord @whatnowmaxtv](https://discord.gg/FTYCwNeNeJ) and I will keep the bot running as long as your subscription to Jaquarium is maintained.
 
 If you prefer to run the bot on your own system, follow these steps:
 

@@ -80,6 +80,7 @@ For inquiries or setup assistance, ~~feel free to reach out~~ subscribe to jaqua
 ## Future Plans
 * configure the 25 message frequency (for now you can easily edit the value in the .js, but I want to use an argument to make it easier on myself
 * permabanned bot still tries to rejoin chat (this might not be possible given tmi.js unfortunately)
+* have the bot write to disk every 25 messages, rather than every message. This will be top priority if any larger streamers join in.really tough to 
 * ~~publish the project open source~~
 ---
 

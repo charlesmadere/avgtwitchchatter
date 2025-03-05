@@ -10,6 +10,38 @@ If you would like me to run the bot for you, simply follow these steps:
 3. **Generate an access token** using [Twitch Token Generator](https://twitchtokengenerator.com/).
 4. **Send me the access token**, and I will keep the bot running as long as your subscription to Jaquarium is maintained.
 
+If you prefer to run the bot on your own system, follow these steps:
+
+### Requirements:
+- **Node.js** (Latest LTS version recommended)
+- **Python** (For Markov processing)
+- **tmi.js** (Twitch chat interface library for Node.js)
+- **Markov library** for Node.js
+
+### Installation Steps:
+1. **Install Node.js** if you haven’t already: [Download Node.js](https://nodejs.org/)
+2. **Install Python** if you haven’t already: [Download Python](https://www.python.org/downloads/)
+3. **Clone the repository:**
+   ```sh
+   git clone https://github.com/your-repo/twitch-markov-bot.git
+   cd twitch-markov-bot
+   ```
+4. **Install required dependencies:**
+   ```sh
+   npm install tmi.js markov
+   ```
+5. **Configure your bot:**
+   - Create a `.env` file and add your Twitch bot credentials.
+   - Example:
+     ```env
+     TWITCH_USERNAME=yourbotusername
+     TWITCH_OAUTH=your_oauth_token
+     ```
+6. **Run the bot:**
+   ```sh
+   node bot.js
+   ```
+
 ## Commands
 The bot provides the following chat commands:
 

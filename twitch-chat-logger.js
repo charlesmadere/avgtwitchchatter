@@ -78,7 +78,8 @@ const client = new tmi.Client({
         username: botName, // Replace with your Twitch username
         password: oauthToken // Replace with your Twitch OAuth token
     },
-    channels: ['whatnowmaxtv',chName] // channels you want to monitor
+    channels: [chName] // channels you want to monitor
+    //channels: ['whatnowmaxtv',chName] // channels you want to monitor
 });
 
 // Append new messages to a log file if the user has opted in

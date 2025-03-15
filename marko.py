@@ -41,7 +41,7 @@ text_model = markovify.NewlineText(text,state_size=3)
 
 #Print five randomly-generated sentences
 
-for i in range(5):
+for i in range(20):
 
     #make sure term does not have banned term in it
     while True:

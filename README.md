@@ -1,5 +1,7 @@
 # Twitch Chat Bot - Markov Chain Generator
 
+![image](https://github.com/user-attachments/assets/024626f4-c9f8-4c60-8c8e-48bbfec72272)
+
 ## Introduction
 Hello! This is a Twitch chat bot that collects opted-in users' chat messages to generate random messages using a Markov chain. It was originally (and still is) an effort to support **[Jaquarium](https://twitch.tv/jaquarium)** through alternative means beyond direct donations and subscriptions. If you enjoy the bot, please spread the word!
 

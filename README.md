@@ -33,19 +33,24 @@ Follow these steps:
    
 5. **Install required dependencies:**
    ```
-   npm install tmi.js markov
+   npm install tmi.js
+   pip install markovify
    ```
 6. **Run the bot:**
+    ```
+   node twitch-chat-logger.js <name of bot> <name of channel>
+   ```
+    - Example:
+   ```
+   node twitch-chat-logger.js avgjqchatter jaquarium
+   ```
+   - Alternatively, you can use a bash script I wrote for myself:
    ```
    ./startbot.sh <name of bot> <name of channel>
    ```
    - Example:
    ```
    ./startbot.sh avgjqchatter jaquarium
-   ```
-   - Alternatively, you can just launch the .js:
-   ```
-   node twitch-chat-logger.js <name of bot> <name of channel>
    ```
    I created the bash wrapper to load env variables for python/js to make things easier for myself, but you probably won't need that.
 

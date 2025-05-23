@@ -1,43 +1,50 @@
-import markovify
 import sys
+from typing import Final
+
+import markovify
 
 # Get the channel name passed as a command-line argument
-bot_name = sys.argv[1] if len(sys.argv) > 1 else None
+bot_name: Final[str] = sys.argv[1] if len(sys.argv) > 1 else None
 
 if not bot_name:
     print("No channel name provided.")
 
+chat_log_file: Final[str] = "./" + bot_name + "/chat_log.txt"
 
-chat_log_file = "./" + bot_name + "/chat_log.txt"
+
+def load_banned_terms() -> frozenset[str]:
+    filename: Final[str] = bot_name + "/banned_terms.txt"
+
+    try:
+        with open(filename, "r", encoding = "utf-8") as file:
+            return frozenset({line.strip().lower() for line in file if line.strip()})
+    except FileNotFoundError:
+        print(f"Error: {filename} not found.")
+        return frozenset()
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        return frozenset()
+
+banned_terms: Final[frozenset[str]] = load_banned_terms()
+
 ###
 # check if contains banned term
 ###
 
-def contains_banned_term(text, filename="banned_terms.txt"):
+def contains_banned_term(text: str) -> bool:
 
-    filename=bot_name + "/banned_terms.txt"
+    if text is None or len(text) == 0 or text.isspace():
+        return False
 
-    if text is None:
-        return False
-    try:
-        with open(filename, "r", encoding="utf-8") as file:
-            banned_terms = {line.strip().lower() for line in file if line.strip()}
-        
-        text_words = set(text.lower().split())
-        return any(term in text_words for term in banned_terms)
-    except FileNotFoundError:
-        print(f"Error: {filename} not found.")
-        return False
-    except Exception as e:
-        print(f"An error occurred: {e}")
-        return False
+    text_words = set(text.lower().split())
+    return any(term in text_words for term in banned_terms)
 
 # Get raw text as string.
-with open(chat_log_file, "r", encoding='utf-8') as f:
-	text = f.read()
+with open(chat_log_file, "r", encoding = "utf-8") as f:
+    text = f.read()
 
 #Build the model
-text_model = markovify.NewlineText(text,state_size=3)
+text_model = markovify.NewlineText(text, state_size = 3)
 
 #Print five randomly-generated sentences
 
@@ -45,7 +52,7 @@ for i in range(20):
 
     #make sure term does not have banned term in it
     while True:
-        string1 = text_model.make_sentence(test_output=False)
+        string1 = text_model.make_sentence(test_output = False)
         if not contains_banned_term(string1):
             break
 
@@ -57,11 +64,11 @@ for i in range(20):
 
     #if more than one word, regenerate it to be at least 10% unique, but no banned terms
     while True:
-        string1 = text_model.make_sentence(max_overlap_ratio=0.9)
+        string1 = text_model.make_sentence(max_overlap_ratio = 0.9)
         if not contains_banned_term(string1):
             break
 
-    if string1 is not None :
+    if string1 is not None:
         print(string1)
         break
 
